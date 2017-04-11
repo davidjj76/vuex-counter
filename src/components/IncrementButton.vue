@@ -1,13 +1,15 @@
 <template lang="html">
-  <button @click.prevent="activate">+1</button>
+  <button @click.prevent="INCREMENT">+1</button>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   methods: {
-    activate() {
-      console.log('+1 presed');
-    },
+    ...mapActions([
+      'INCREMENT',
+    ]),
   },
 };
 </script>

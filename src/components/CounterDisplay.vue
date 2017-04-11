@@ -1,15 +1,21 @@
 <template lang="html">
   <div>
-    Count is: {{ count }}
+    <p>Count is: {{ counter }}</p>
+    <p>Double count is: {{ doubleCounter }}</p>    
   </div>
 </template>
 
 <script>
+import { mapState, mapGetters } from 'vuex';
+
 export default {
-  data() {
-    return {
-      count: 0,
-    };
+  computed: {
+    ...mapState([
+      'counter',
+    ]),
+    ...mapGetters([
+      'doubleCounter',
+    ]),
   },
 };
 </script>
